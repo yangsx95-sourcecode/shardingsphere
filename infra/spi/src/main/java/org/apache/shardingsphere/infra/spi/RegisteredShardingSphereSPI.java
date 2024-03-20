@@ -26,6 +26,7 @@ import java.util.LinkedList;
 import java.util.ServiceLoader;
 
 /**
+ * 这个类代表一个已注册的SPI实例，包含SPI接口Class和所有的实例对象。
  * Registered ShardingSphere SPI.
  * 
  * @param <T> type of service

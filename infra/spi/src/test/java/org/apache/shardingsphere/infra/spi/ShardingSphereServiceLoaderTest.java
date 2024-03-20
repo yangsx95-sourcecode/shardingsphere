@@ -49,7 +49,10 @@ class ShardingSphereServiceLoaderTest {
     void assertGetServiceInstancesWithEmptyInstances() {
         assertTrue(ShardingSphereServiceLoader.getServiceInstances(EmptySPIFixture.class).isEmpty());
     }
-    
+
+    /**
+     * 通过SPI装载 SingletonSPIFixture类，该类只有一个SPI实现
+     */
     @Test
     void assertGetServiceInstancesWithSingletonSPI() {
         Collection<SingletonSPIFixture> actual = ShardingSphereServiceLoader.getServiceInstances(SingletonSPIFixture.class);

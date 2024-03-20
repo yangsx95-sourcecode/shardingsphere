@@ -26,6 +26,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * ShardingSphere service loader.
+ * SPI服务加载器，内部有个Map缓存，会先从换从中获取实例，如果娶不到，就会创建一个 RegisteredShardingSphereSPI 已注册SPI实例放入。
+ * RegisteredShardingSphereSPI 代表一个SPI类型，可能包含多个服务实例。
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class ShardingSphereServiceLoader {

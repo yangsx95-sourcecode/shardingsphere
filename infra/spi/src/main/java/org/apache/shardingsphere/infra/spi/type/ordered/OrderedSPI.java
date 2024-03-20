@@ -18,6 +18,10 @@
 package org.apache.shardingsphere.infra.spi.type.ordered;
 
 /**
+ * 有序的SPI修饰
+ *    可定义当前SPI实例的顺序
+ *    可定义当前SPI实例的具体的Class类型
+ * Order本身不支持type，但是在OrderedServicesCache中，支持了对类型的扩展
  * Ordered SPI.
  * 
  * @param <T> type

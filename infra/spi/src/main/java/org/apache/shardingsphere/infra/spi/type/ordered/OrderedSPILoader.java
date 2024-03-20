@@ -35,7 +35,7 @@ import java.util.TreeMap;
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class OrderedSPILoader {
-    
+
     /**
      * Get services by class type.
      *
@@ -52,7 +52,7 @@ public final class OrderedSPILoader {
         }
         return result;
     }
-    
+
     /**
      * Get services.
      *
@@ -65,7 +65,7 @@ public final class OrderedSPILoader {
     public static <K, V extends OrderedSPI<?>> Map<K, V> getServices(final Class<V> serviceInterface, final Collection<K> types) {
         return getServices(serviceInterface, types, Comparator.naturalOrder());
     }
-    
+
     /**
      * Get services.
      *
@@ -101,7 +101,15 @@ public final class OrderedSPILoader {
     public static <T extends OrderedSPI<?>> Collection<T> getServices(final Class<T> serviceInterface) {
         return getServices(serviceInterface, Comparator.naturalOrder());
     }
-    
+
+    /**
+     * 获取有序的SPI实例列表，内部是使用TreeSet+Comparator进行排序的
+     *
+     * @param serviceInterface 服务接口
+     * @param comparator       比较器
+     * @param <T>              泛型
+     * @return 有序的实例列表
+     */
     private static <T extends OrderedSPI<?>> Collection<T> getServices(final Class<T> serviceInterface, final Comparator<Integer> comparator) {
         Map<Integer, T> result = new TreeMap<>(comparator);
         for (T each : ShardingSphereServiceLoader.getServiceInstances(serviceInterface)) {

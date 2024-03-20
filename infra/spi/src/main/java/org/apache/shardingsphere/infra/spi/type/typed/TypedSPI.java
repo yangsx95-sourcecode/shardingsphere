@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.Properties;
 
 /**
+ * 是一个SPI的修饰，代表拥有type类型的SPI，类型通常为枚举，比如算法的名字，或者为具体的实例的Class
  * Typed SPI.
  */
 public interface TypedSPI {
