@@ -27,6 +27,8 @@ import java.util.Collection;
 
 /**
  * ShardingSphere URL load engine.
+ * URL加载引擎
+ * 传入一个url，他会通过SPI找到对应的URLLoader对象，并调用load方法，加载内容
  */
 public final class ShardingSphereURLLoadEngine {
     

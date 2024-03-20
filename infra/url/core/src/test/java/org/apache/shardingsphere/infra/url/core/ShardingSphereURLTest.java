@@ -32,8 +32,10 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class ShardingSphereURLTest {
-    
+
+    // 这个注解代表参数化测试，name用于指定显示的名称的模板，模板中的0代表方法的第0个参数
     @ParameterizedTest(name = "{0}")
+    // 指定参数的来源，从TestCaseArgumentsProvider函数获取。
     @ArgumentsSource(TestCaseArgumentsProvider.class)
     void assertParse(final String url, final String expectedSourceType, final String expectedConfigurationSubject, final Map<String, String> expectedProps) {
         ShardingSphereURL actual = ShardingSphereURL.parse(url);

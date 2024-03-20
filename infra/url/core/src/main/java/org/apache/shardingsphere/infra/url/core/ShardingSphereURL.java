@@ -33,11 +33,13 @@ import java.util.Properties;
 @RequiredArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 public final class ShardingSphereURL {
-    
+
+    // absolutepath:/Users/shardingsphere/config.yaml
+    // absolutepath
     private final String sourceType;
-    
+    // /Users/shardingsphere/config.yaml
     private final String configurationSubject;
-    
+    // ? 后面的URL参数
     private final Properties queryProps;
     
     /**
