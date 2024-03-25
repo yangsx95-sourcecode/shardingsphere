@@ -25,12 +25,14 @@ import java.util.Optional;
 
 /**
  * Database type.
+ * 用于定义数据库类型的接口。
  */
 @SingletonSPI
 public interface DatabaseType extends TypedSPI {
     
     /**
      * Get JDBC URL prefixes.
+     * 定义不同数据库的jdbcURL前缀，比如 mysql的就是 jdbc:mysql
      * 
      * @return prefixes of JDBC URL
      */

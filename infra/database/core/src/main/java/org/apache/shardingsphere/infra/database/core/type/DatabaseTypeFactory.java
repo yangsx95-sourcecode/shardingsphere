@@ -33,6 +33,7 @@ public final class DatabaseTypeFactory {
     
     /**
      * Get database type.
+     * 根据url获取当前数据库的类型
      *
      * @param url database URL
      * @return database type
@@ -47,7 +48,7 @@ public final class DatabaseTypeFactory {
         }
         return databaseTypes.iterator().next();
     }
-    
+
     private static boolean matchURLs(final String url, final DatabaseType databaseType) {
         return databaseType.getJdbcUrlPrefixes().stream().anyMatch(url::startsWith);
     }

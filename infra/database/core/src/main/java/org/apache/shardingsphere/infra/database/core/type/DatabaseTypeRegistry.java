@@ -29,6 +29,9 @@ import java.util.stream.Collectors;
 
 /**
  * Database type registry.
+ * 数据库类型注册包装，他不仅有数据库类型，还提供了不同数据库的其他元数据
+ * databaseType + dialectDatabaseMetaData
+ * 在创建这个对象时，会将其自动放入到注册表缓存REGISTERED_META_DATA中
  */
 public final class DatabaseTypeRegistry {
     

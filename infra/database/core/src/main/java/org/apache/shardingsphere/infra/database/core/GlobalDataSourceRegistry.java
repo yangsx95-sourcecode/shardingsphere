@@ -27,15 +27,23 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Global data source registry.
+ * 全局的数据源注册器，是一个单例的对象
+ * 内部有缓存的数据源map以及数据库表map
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 @Getter
 public final class GlobalDataSourceRegistry {
     
     private static final GlobalDataSourceRegistry INSTANCE = new GlobalDataSourceRegistry();
-    
+
+    /**
+     * key 为数据源名称，value 为数据源对象
+     */
     private final Map<String, DataSource> cachedDataSources = new ConcurrentHashMap<>();
-    
+
+    /**
+     * key 为标明，value位数据库的名字
+     */
     private final Map<String, String> cachedDatabaseTables = new ConcurrentHashMap<>();
     
     /**
